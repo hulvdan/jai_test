@@ -2,6 +2,18 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "1_gitf",
+      "type": "shell",
+      "command": "src/main.exe gitf",
+      "icon": {
+        "id": "run"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "clear": true
+      }
+    },
+    {
       "label": "main",
       "type": "shell",
       "dependsOn": [
