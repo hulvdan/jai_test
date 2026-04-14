@@ -8,7 +8,7 @@ gitf :: () {
     if it && result.exit_code
       assert(false);
   }
-  result := run_command("git", "push");
+  run_command("git", "push");
 }
 
 main :: () {
