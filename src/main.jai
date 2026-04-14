@@ -7,6 +7,8 @@ gitf :: () {
         result := run_command("git", "commit", "-m", "f");
         if it && result.exit_code
             assert(false);
+        else if !result.exit_code
+            break;
     }
     run_command("git", "push");
 }
