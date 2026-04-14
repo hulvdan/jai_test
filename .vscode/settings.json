@@ -1,0 +1,96 @@
+{
+  "files.exclude": {
+    "**/*.binpb": true,
+    "**/*.translation": true,
+    "**/*.tscn*.tmp": true,
+    "**/*.uid": true,
+    ".godot/": true,
+    "node_modules": true,
+    "src/.build": true,
+    "uv.lock": true
+  },
+  "search.exclude": {
+    "**/*.binpb": true,
+    "**/*.translation": true,
+    "**/*.tscn*.tmp": true,
+    "**/*.uid": true,
+    "**/*_pb2.py": true,
+    ".godot/": true,
+    "node_modules": true,
+    "src/.build": true,
+    "uv.lock": true
+  },
+  "files.associations": {
+    "*.ldtk": "json",
+    ".prettierrc": "json",
+    "*.jai": "cpp"
+  },
+  "runOnSave.commands": [
+    {
+      "match": "\\.json$",
+      "command": "prettier -w ${file}"
+    },
+    {
+      "match": "\\.(yml|yaml|yamlfmt|yamllint)$",
+      "command": "yamlfmt ${file}"
+    },
+    // {
+    //   "match": "\\.pyi?$",
+    //   "command": "uv run cog -n utf-8 -U -r -P --markers=\"[[[cog cog]]] [[[end]]]\" ${file} && uv run ruff format ${file} && uv run ruff check --select I ${file} --fix",
+    //   "async": false
+    // },
+    {
+      "match": "\\.jai$",
+      "commandBeforeSaving": "workbench.action.debug.stop",
+      "command": "launches.run_f5",
+      "runIn": "vscode"
+      // "async": false
+    },
+    {
+      "match": "\\.md$",
+      "command": "uv run cog -n utf-8 -U -r -P --markers=\"[[[cog cog]]] [[[end]]]\" ${file}"
+    }
+    // {
+    //     // Match scss files except names start with `_`.
+    //     "match": ".*\\.scss$",
+    //     "notMatch": "[\\\\\\/]_[^\\\\\\/]*\\.scss$",
+    //     "command": "node-sass ${file} ${fileDirname}/${fileBasenameNoExtension}.css",
+    //     "runningStatusMessage": "Compiling ${fileBasename}",
+    //     "finishStatusMessage": "${fileBasename} compiled"
+    // },
+    // {
+    //     // Match less files except names start with `_`.
+    //     "globMatch": "**/[^_]*.less",
+    //     "command": "node-sass ${file} ${fileDirname}/${fileBasenameNoExtension}.css",
+    //     "runIn": "terminal"
+    // },
+    // {
+    //     // Match any python files by language id.
+    //     "languages": [
+    //         "python"
+    //     ],
+    //     "command": "python.runLinting",
+    //     "runIn": "vscode"
+    // }
+  ],
+  "launches": {
+    // "run_f4": "tool_attacks_animator",
+    "run_f5": "main"
+  },
+  "cSpell.words": [
+    "asserte",
+    "BONKER",
+    "Deser",
+    "flattenizer",
+    "gdir",
+    "gdisable",
+    "gexit",
+    "gprefix",
+    "HIVER",
+    "ktype",
+    "mult",
+    "projectilefly",
+    "ress",
+    "SLOWDOWNER"
+  ]
+}
