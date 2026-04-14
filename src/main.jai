@@ -1,16 +1,16 @@
 #import "Basic";
-#import "Process";
+Process :: #import "Process";
 
 gitf :: () {  ///
     for 0..2 {
-        run_command("git", "add", "-A");
-        result := run_command("git", "commit", "-m", "f");
+        Process.run_command("git", "add", "-A");
+        result := Process.run_command("git", "commit", "-m", "f");
         if it && result.exit_code
             assert(false);
         else if !result.exit_code
             break;
     }
-    run_command("git", "push");
+    Process.run_command("git", "push");
 } ///
 
 main :: () { ///
