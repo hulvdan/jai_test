@@ -1,7 +1,7 @@
 #import "Basic";
 #import "Process";
 
-gitf :: () {
+gitf :: () {  ///
     for 0..2 {
         run_command("git", "add", "-A");
         result := run_command("git", "commit", "-m", "f");
@@ -11,9 +11,9 @@ gitf :: () {
             break;
     }
     run_command("git", "push");
-}
+} ///
 
-main :: () {
+main :: () { ///
     args: [..] string;
     args.allocator = temp;
     for get_command_line_arguments() {
@@ -26,4 +26,4 @@ main :: () {
         gitf();
         return;
     }
-}
+} ///
