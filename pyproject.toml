@@ -3,62 +3,14 @@ name = "cli"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.11.3"
-authors = []
+requires-python = ">=3.14.0"
 dependencies = [
   "cogapp>=3.6.0",
-  "cpplint>=2.0.2",
-  "deepdiff>=8.6.2",
-  "deepmerge>=2.0",
-  "fnvhash>=0.2.1",
-  "gdtoolkit>=4.5.0",
-  "imgui-bundle[full]>=1.92.600",
-  "livereload>=2.7.1",
-  "lxml>=6.0.2",
-  "mypy>=1.18.2",
-  "numpy>=2.3.5",
-  "opencv-python>=4.11.0.86",
-  "pillow>=12.0.0",
-  "pip>=25.3",
   "pre-commit>=4.5.1",
-  "protobuf>=6.33.5",
-  "pycolornames>=1.1.0",
-  "pydantic>=2.12.5",
-  "pydub>=0.25.1",
-  "pyfiglet>=1.0.4",
-  "pyglm>=2.8.3",
-  "pyjson5>=2.0.0",
-  "pyopengl>=3.1.10",
-  "pyright>=1.1.408",
-  "pytest>=9.0.1",
-  "pyyaml>=6.0.3",
-  "rich>=14.2.0",
-  "rpp>=0.5",
-  "ruff>=0.14.6",
-  "scons>=4.10.1",
-  "spacy>=3.8.11",
-  "toml>=0.10.2",
-  "typer>=0.20.0",
-  "types-pyyaml>=6.0.12.20250915",
-  "websockets>=15.0.1",
+  "pytest>=9.0.3",
+  "typer>=0.24.1",
   "yamllint>=1.38.0",
 ]
-packages = [
-  { include = "cli" },
-]
-
-[project.scripts]
-cli = "cli:main"
-
-[tool.uv.build-backend]
-module-root = ""
-
-[build-system]
-requires = ["uv_build>=0.9.13,<0.10.0"]
-build-backend = "uv_build"
-
-[dependency-groups]
-dev = []
 
 [tool.ruff]
 line-length = 90

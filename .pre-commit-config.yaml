@@ -45,15 +45,6 @@ repos:
 #       # types: [gdscript]
 - repo: local
   hooks:
-  - id: gdscript-formatter
-    name: gdscript-formatter
-    entry: gdscript-formatter --reorder-code
-    stages: [pre-commit, pre-merge-commit, manual]
-    require_serial: true
-    always_run: true
-    language: system
-    types: [gdscript]
-    exclude: ^addons/.*$
   - id: prettier
     name: prettier
     entry: prettier --parser json --write
@@ -61,57 +52,35 @@ repos:
     require_serial: true
     files: \.(json|ldtk)$
     stages: [pre-commit, pre-merge-commit, manual]
-    exclude: ^addons/.*$
-  - id: proto-renumber
-    name: proto-renumber
-    entry: uv run python cli/bf_cli.py proto_renumber
-    language: system
-    require_serial: true
-    always_run: true
-    pass_filenames: false
-    stages: [pre-commit, pre-merge-commit, manual]
-  - id: buf-format
-    name: buf format
-    entry: buf format -w src
-    language: system
-    require_serial: true
-    always_run: true
-    pass_filenames: false
-    stages: [pre-commit, pre-merge-commit, manual]
-  - id: ruff-format
-    name: ruff format
-    entry: uv run ruff format
-    language: system
-    require_serial: true
-    files: \.py$
-    stages: [pre-commit, pre-merge-commit, manual]
-  - id: ruff-check
-    name: ruff check
-    entry: uv run ruff check --output-format=concise
-    language: system
-    require_serial: true
-    files: \.py$
-    stages: [pre-commit, pre-merge-commit, manual]
-  - id: ty-check
-    name: ty check
-    entry: ty check cli --output-format=concise --no-progress
-    language: system
-    require_serial: true
-    files: \.py$
-    stages: [pre-commit, pre-merge-commit, manual]
+  # - id: proto-renumber
+  #   name: proto-renumber
+  #   entry: uv run python cli/bf_cli.py proto_renumber
+  #   language: system
+  #   require_serial: true
+  #   always_run: true
+  #   pass_filenames: false
+  #   stages: [pre-commit, pre-merge-commit, manual]
+  # - id: buf-format
+  #   name: buf format
+  #   entry: buf format -w src
+  #   language: system
+  #   require_serial: true
+  #   always_run: true
+  #   pass_filenames: false
+  #   stages: [pre-commit, pre-merge-commit, manual]
+  # - id: ty-check
+  #   name: ty check
+  #   entry: ty check cli --output-format=concise --no-progress
+  #   language: system
+  #   require_serial: true
+  #   files: \.py$
+  #   stages: [pre-commit, pre-merge-commit, manual]
   - id: tombi-format
     name: tombi format
     entry: uvx tombi format
     language: system
     require_serial: true
     files: \.toml$
-    stages: [pre-commit, pre-merge-commit, manual]
-  - id: banner
-    name: banner
-    entry: uv run python cli/bf_cli.py banner
-    language: system
-    require_serial: true
-    files: \.(yml|yaml|gd|py|c|h|cxx|cpp|txt|md|proto|fbs|lua)$
     stages: [pre-commit, pre-merge-commit, manual]
   - id: yamllint
     name: yamllint
@@ -128,17 +97,16 @@ repos:
     pass_filenames: false
     always_run: true
     language: system
-  - id: pytest-bf_lib
-    name: pytest-bf_lib
-    entry: uv run pytest cli/bf_lib.py
-    language: system
-    require_serial: true
-    always_run: true
-    pass_filenames: false
-    stages: [pre-commit, pre-merge-commit, manual]
+    # - id: pytest-bf_lib
+    #   name: pytest-bf_lib
+    #   entry: uv run pytest cli/bf_lib.py
+    #   language: system
+    #   require_serial: true
+    #   always_run: true
+    #   pass_filenames: false
+    #   stages: [pre-commit, pre-merge-commit, manual]
 - repo: https://github.com/editorconfig-checker/editorconfig-checker
   rev: v3.6.1
   hooks:
   - id: editorconfig-checker
-    exclude: ^(addons|assets)/.*$
     args: ["-disable-indent-size"]
